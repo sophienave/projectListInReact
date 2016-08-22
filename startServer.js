@@ -20,3 +20,5 @@ var createdServer = server.listen(3000, function () {
   console.log('projectList app listening at ' + address);
 
 });
+
+require('./server/rest/projectRest')(server);
