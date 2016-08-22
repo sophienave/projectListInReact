@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sophienave/projectListInReact/issues"
   },
-  "homepage": "https://github.com/sophienave/projectListInReact"
+  "homepage": "https://github.com/sophienave/projectListInReact",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
 }
