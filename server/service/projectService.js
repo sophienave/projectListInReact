@@ -1,5 +1,5 @@
 function ProjectService(){
-	
+	this.projects =[];
 };
 
 ProjectService.prototype.getProject = function(){
@@ -9,6 +9,14 @@ ProjectService.prototype.getProject = function(){
         status: "Not started"
     };
 	return project;
+};
+
+ProjectService.prototype.addProject = function(project){
+	this.projects.push(project);
+};
+
+ProjectService.prototype.getProjects = function(){
+	return this.projects;
 };
 
 var projectService = new ProjectService();
