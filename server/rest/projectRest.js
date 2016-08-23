@@ -1,8 +1,8 @@
 var projectService = require('./../service/projectService');
 
 module.exports = function (server) {
-    server.get('/project', function (req, res) {
-        var project = projectService.getProject();
+    server.get('/project/:id', function (req, res) {
+        var project = projectService.getProject(req.params.id);
 
         res.status(201).json(project);
     });
