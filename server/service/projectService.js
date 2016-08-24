@@ -1,15 +1,35 @@
 function ProjectService(){
-	this.projects =[];
+	this.projects =[
+  {
+    "name": "sophie1",
+    "id": "1",
+    "status": "In Progress"
+  },
+  {
+    "name": "sophie2",
+    "id": "2",
+    "status": "In Progress"
+  },
+  {
+    "name": "sophie3",
+    "id": "3",
+    "status": "In Progress"
+  },
+  {
+    "name": "sophie4",
+    "id": "4",
+    "status": "No Started"
+  }
+];
 };
 
 ProjectService.prototype.getProject = function(id){
 	for(var i=0; i<this.projects.length; i++){
-		if (this.projects[i].id == id) {
-			return this.projects[i];
+		var project = this.projects[i];
+		if (project.id == id) {
+			return project;
 		}
 	}
-	
-	return "No project found with id="+id;
 };
 
 ProjectService.prototype.addProject = function(project){
