@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var server = express();
-server.use(express.static('app'));
+server.use(express.static('dist'));
 server.use(bodyParser.json());
 
 var createdServer = server.listen(3000, function () {
