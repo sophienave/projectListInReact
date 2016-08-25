@@ -1,5 +1,4 @@
-class  RequestUtil {
-	static get(url) {
+	export function get(url) {
 		var promise =  new Promise(function(resolve, reject) {
 			var request = new XMLHttpRequest();
 			request.open('GET', url, true);
@@ -22,15 +21,15 @@ class  RequestUtil {
 		return promise;
 	}
 
-	static post(url, payload) {
+	export function post(url, payload) {
 		var promise =  new Promise(function(resolve, reject) {
 			var request = new XMLHttpRequest();
 			request.open('POST', url, true);
 			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
-			request.send = function(payload) {
+			request.onload = function(payload) {
 		  	if (request.status >= 200 && request.status < 400) {
-			    resolve();
+			    resolve(payload);
 			  } else {
 			    reject();
 			  }
@@ -38,8 +37,8 @@ class  RequestUtil {
 			request.onerror = function() {
 			  reject();
 			};
+
+			request.send(payload);
 		});
 		return promise;
 	}
-}
-export default RequestUtil;
